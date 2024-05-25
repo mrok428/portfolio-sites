@@ -1,5 +1,27 @@
-$primary-color: #ff5100;
+/* Main SCSS file to import all partials */
 
-body {
-    color: $primary-color;
-}
+/* Base */
+@import 'base/reset';
+@import 'base/typography';
+
+/* Components */
+@import 'components/buttons';
+
+/* Layout */
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/sidebar';
+
+/* Pages */
+@import 'pages/about';
+@import 'pages/home';
+
+/* Themes */
+@import 'themes/colors';
+@import 'themes/variables';
+
+/* Utils */
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
