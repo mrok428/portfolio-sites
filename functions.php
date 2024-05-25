@@ -73,7 +73,7 @@ function register_custom_post_type($post_type, $singular_name, $plural_name, $su
  * Register custom post types.
  * /
 function my_custom_post_types() {
-    register_custom_post_type('sample', 'Sample', 'Samples');
+    register_custom_post_type('practice-note', '練習帳', '練習帳');
 }
 add_action('init', 'my_custom_post_types');
 
