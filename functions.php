@@ -80,5 +80,4 @@ function my_custom_post_types() {
     register_custom_post_type('practice-note', '練習帳', '');
 }
 add_action('init', 'my_custom_post_types');
-
 ?>
