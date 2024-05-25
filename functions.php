@@ -5,14 +5,13 @@ function my_custom_theme_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'my_custom_theme_enqueue_scripts');
 
-
-/** 
+/**
  * Register a custom post type.
  * @param string $post_type The post type key.
  * @param string $singular_name The singular name of the post type.
  * @param string $plural_name The plural name of the post type.
  * @param array $supports The features the post type supports.
- * /
+ */
 function register_custom_post_type($post_type, $singular_name, $plural_name, $supports = array('title', 'editor', 'thumbnail')) {
     $labels = array(
         'name' => _x($plural_name, 'Post Type General Name', 'textdomain'),
@@ -68,14 +67,11 @@ function register_custom_post_type($post_type, $singular_name, $plural_name, $su
     register_post_type($post_type, $args);
 }
 
-
-/** 
+/**
  * Register custom post types.
- * /
+ */
 function my_custom_post_types() {
     register_custom_post_type('sample', 'Sample', 'Samples');
 }
 add_action('init', 'my_custom_post_types');
-
 ?>
-
