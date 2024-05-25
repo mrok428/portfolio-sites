@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^7.1.2",
     "sass": "^1.77.2",
-    "scss": "^0.2.4"
+    "sass-loader": "^14.2.1",
+    "scss": "^0.2.4",
+    "style-loader": "^4.0.0"
   },
   "dependencies": {
     "@babel/preset-env": "^7.24.6",

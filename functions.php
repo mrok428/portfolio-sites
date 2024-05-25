@@ -1,9 +1,13 @@
 <?php
 function my_custom_theme_enqueue_scripts() {
     wp_enqueue_style('main-styles', get_stylesheet_directory_uri() . '/style.css');
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/bundle.js', array(), null, true);
+
+    if (is_singular('practice-note')) {
+        wp_enqueue_script('single-practice-note-js', get_template_directory_uri() . '/dist/single-practice-note.bundle.js', array(), null, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'my_custom_theme_enqueue_scripts');
+
 
 /**
  * Register a custom post type.
@@ -77,7 +81,7 @@ function register_custom_post_type($post_type, $singular_name, $plural_name, $su
  * Register custom post types.
  */
 function my_custom_post_types() {
-    register_custom_post_type('practice-note', '練習帳', '');
+    register_custom_post_type('practice-note', '練習帳', '練習帳');
 }
 add_action('init', 'my_custom_post_types');
 ?>
