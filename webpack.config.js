@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'), // distに出力されるように設定
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
@@ -35,7 +35,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
-            '@layouts': path.resolve(__dirname, 'assets/js/layouts')
-        },
+            '@layouts': path.resolve(__dirname, 'assets/js/layouts'),
+        }
     },
 };

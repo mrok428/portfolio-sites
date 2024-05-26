@@ -1,7 +1,7 @@
 <?php
 function my_custom_theme_enqueue_scripts() {
-    wp_enqueue_style('main-styles', get_stylesheet_directory_uri() . '/style.css');
-
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/main.bundle.css');
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/main.bundle.js', array(), null, true);
     if (is_singular('practice-note')) {
         wp_enqueue_script('single-practice-note-js', get_template_directory_uri() . '/dist/single-practice-note.bundle.js', array(), null, true);
     }
