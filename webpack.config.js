@@ -1,15 +1,27 @@
 const path = require('path');
 
 module.exports = {
-    entry: './assets/js/index.js',
+    mode: 'development',
+    entry: {
+        main: './assets/js/index.js',
+        'single-practice-note': './assets/js/single-practice-note.js',
+    },
     output: {
-        path: path.resolve(__dirname, 'assets/js'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ],
+            },
+            {
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -18,11 +30,12 @@ module.exports = {
                     }
                 }
             }
-        ]
+        ],
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'assets/js'),
-        compress: true,
-        port: 9000
-    }
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '@layouts': path.resolve(__dirname, 'assets/js/layouts'),
+        }
+    },
 };
